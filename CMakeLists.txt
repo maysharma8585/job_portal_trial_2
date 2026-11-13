@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.20)
+project(launchboard LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+include(FetchContent)
+set(CROW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(CROW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+FetchContent_Declare(Crow GIT_REPOSITORY https://github.com/CrowCpp/Crow.git GIT_TAG v1.3.4)
+FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz)
+FetchContent_MakeAvailable(Crow json)
+find_package(ODBC REQUIRED)
+find_package(OpenSSL REQUIRED)
+
+add_executable(launchboard src/main.cpp)
+target_link_libraries(launchboard PRIVATE Crow::Crow nlohmann_json::nlohmann_json ODBC::ODBC OpenSSL::Crypto)
+if(WIN32)
+  target_link_libraries(launchboard PRIVATE bcrypt)
+endif()

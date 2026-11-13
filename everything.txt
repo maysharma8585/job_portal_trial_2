@@ -1,0 +1,69 @@
+## MANDATORY TECHNOLOGY STACK
+
+### FRONTEND
+- HTML5
+- CSS3
+- Vanilla JavaScript (ES6+)
+- Responsive web design
+- Modern CSS animations and transitions
+- Fetch API for backend communication
+
+### BACKEND
+- C++17
+- Crow C++ Web Framework
+- REST API architecture
+- JSON request and response handling
+- Proper server-side validation and authentication
+
+### DATABASE
+- Primary: MySQL 8
+- Alternative: Microsoft Access through ODBC
+- Database abstraction layer in C++
+- Prepared statements and secure database operations
+
+### ARCHITECTURE
+
+Frontend (HTML/CSS/JavaScript)
+        |
+        | REST API / JSON
+        |
+C++ Backend (Crow)
+        |
+        | Database abstraction
+        |
+MySQL 8 / MS Access ODBC
+
+The C++ backend must contain the actual business logic, authentication, authorization, validation and database operations.
+
+JavaScript must only handle frontend interactions and communicate with the backend API.
+
+Do not implement the backend using Node.js, PHP or Python.
+
+### PROJECT TECHNOLOGY LABELS
+
+Clearly identify:
+
+Frontend: HTML5, CSS3, JavaScript
+
+Backend: C++17 / Crow Framework
+
+Primary Database: MySQL 8
+
+Alternative Database: MS Access / ODBC
+
+API: REST / JSON
+
+Do not falsely label C++ as the frontend.
+
+### DEVELOPMENT PRIORITY
+
+1. Build a beautiful responsive frontend.
+2. Build a functional C++ REST API.
+3. Connect the API to MySQL.
+4. Implement MS Access compatibility through ODBC.
+5. Integrate all frontend screens with actual API endpoints.
+6. Test the entire application.
+
+All buttons, forms, dashboards, filters, job applications and management features must work through the actual backend.
+
+The final application must run locally through a documented startup process.
